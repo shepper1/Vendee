@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Échappée Vendéenne : Entre Terre et Océan France </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Échappée Vendéenne : Entre Terre et Océan</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée et Air Marin aux Sables-d'Olonne</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Côte Sauvage et Marais Salants</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 La Venise Verte : Marais Poitevin</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Voyage dans le Temps au Puy du Fou</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 La Roche-sur-Yon et Départ</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">France</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Échappée Vendéenne : Entre Terre et Océan</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 5 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 950€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 3h30 (en train) depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée et Air Marin aux Sables-d'Olonne</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Installation en douceur sur la côte de Lumière. Première immersion dans l'ambiance balnéaire avec une balade sur le célèbre Remblai et la découverte du port.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚆 Arrivée à la gare des Sables-d'Olonne</li>
+                            
+                                <li>🏨 Installation à l'hébergement</li>
+                            
+                                <li>🚶‍♀️ Balade sur le Remblai et le port de pêche</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Vendee/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💡 Astuce</p>
+                                <p class="text-gray-700">La gare est proche du centre-ville. Selon l'emplacement de votre hébergement, vous pourrez vous y rendre à pied pour une première découverte.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Gourmandise</p>
+                                <p class="text-gray-700">Pour le dîner, laissez-vous tenter par un plateau de fruits de mer sur le port. Pensez à réserver, surtout en haute saison.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Côte Sauvage et Marais Salants</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Évasion le long des paysages côtiers préservés et immersion dans la tradition salicole de la région, entre dunes et océan.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚲 Randonnée à vélo ou à pied sur la côte sauvage (Puits d'Enfer, Baie de Cayola)</li>
+                            
+                                <li>🧂 Visite guidée des Salines pour découvrir le métier de saunier</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Vendee/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">👟 Équipement</p>
+                                <p class="text-gray-700">Prévoyez de bonnes chaussures pour les sentiers côtiers qui peuvent être escarpés par endroits.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛍️ Souvenir</p>
+                                <p class="text-gray-700">Rapportez de la fleur de sel directement du producteur, un souvenir authentique et savoureux.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">La Venise Verte : Marais Poitevin</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Plongée au cœur du parc naturel régional du Marais Poitevin pour une journée de quiétude sur l'eau, à l'ombre des frênes têtards.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚗 Trajet vers le Marais Poitevin (~1h15)</li>
+                            
+                                <li>🛶 Balade en barque avec un guide batelier sur les canaux</li>
+                            
+                                <li>🏰 Visite des ruines majestueuses de l'Abbaye de Maillezais</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Vendee/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ À savoir</p>
+                                <p class="text-gray-700">Optez pour une balade avec guide pour mieux comprendre la faune, la flore et l'histoire unique du marais.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦟 Conseil</p>
+                                <p class="text-gray-700">En soirée et près de l'eau, un répulsif à moustiques peut être utile, surtout en été.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Voyage dans le Temps au Puy du Fou</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Une journée inoubliable au cœur de l'Histoire de France avec les spectacles grandioses du Puy du Fou, élu plusieurs fois 'Meilleur Parc du Monde'.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚗 Trajet vers le Puy du Fou (~1h)</li>
+                            
+                                <li>🎭 Journée complète au Grand Parc : spectacles, villages d'époque et nature</li>
+                            
+                                <li>🎆 Spectacle nocturne 'Les Noces de Feu' (selon calendrier)</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Vendee/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎟️ Réservation</p>
+                                <p class="text-gray-700">Achetez vos billets en ligne à l'avance pour éviter les files d'attente et garantir votre accès, surtout pour le spectacle nocturne.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📱 Organisation</p>
+                                <p class="text-gray-700">Téléchargez l'application du parc pour consulter les horaires des spectacles en temps réel et optimiser votre journée.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⌚ Planification</p>
+                                <p class="text-gray-700">Arrivez dès l'ouverture pour profiter au maximum du parc. Le site est immense et une journée est à peine suffisante.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">La Roche-sur-Yon et Départ</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Dernière étape culturelle et mécanique à La Roche-sur-Yon, la ville pentagonale fondée par Napoléon, avant de prendre le chemin du retour.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🐊 Découverte de la place Napoléon et manipulation des Animaux de la Place</li>
+                            
+                                <li>🛍️ Derniers achats de spécialités locales (brioche, troussepinette)</li>
+                            
+                                <li>🚂 Départ depuis la gare de La Roche-sur-Yon</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Vendee/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚙️ Insolite</p>
+                                <p class="text-gray-700">Les animaux mécaniques sont une attraction unique en leur genre, n'hésitez pas à demander aux machinistes de les manipuler.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de Mai, Juin et Septembre.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🌬️ :</strong> Climat océanique : prévoir un coupe-vent et une petite laine, même en été, le temps peut changer vite.</li>
+                    
+                        <li><strong>💳 :</strong> Carte bancaire acceptée partout. Prévoir un peu de liquide pour les petits marchés locaux.</li>
+                    
+                        <li><strong>🚗 :</strong> Location de voiture fortement recommandée pour explorer la Vendée en toute liberté et optimiser les trajets.</li>
+                    
+                        <li><strong>📶 :</strong> Bonne couverture 4G sur la majorité du territoire. Wifi courant dans les hébergements et restaurants.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/France/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://www.vendee-tourisme.com/" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Vendée Tourisme</strong></a></li>
+                    
+                        <li><a href="https://www.sncf-connect.com/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🚆 SNCF Connect</strong></a></li>
+                    
+                        <li><a href="https://www.puydufou.com/france/fr" target="_blank" class="hover:underline flex items-center gap-2"><strong>⚔️ Puy du Fou</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">France</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap n8n</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
