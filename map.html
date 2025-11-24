@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte du voyage - Vendee</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100%; }
+    .info-window {
+      max-width: 250px;
+      font-family: Arial, sans-serif;
+    }
+    .info-window img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .info-window h3 {
+      margin: 0 0 5px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    .info-window p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #666;
+    }
+    .info-window a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+    .info-window a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    function initMap() {
+      const center = { lat: 46.714391739999996, lng: -1.73392566 };
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: center
+      });
+      
+      const markers = [{"lat":46.5011991,"lng":-1.7781025,"name":"Les Sables-d'Olonne","jour":1,"titre":"Arrivée sur la Côte de Lumière","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=46.5011991,-1.7781025&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=46.5011991,-1.7781025","aiImageUrl":"jour1.jpg"},{"lat":46.5011991,"lng":-1.7781025,"name":"Les Sables-d'Olonne & Marais Poitevin","jour":2,"titre":"Entre Océan et Venise Verte","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=46.5011991,-1.7781025&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=46.5011991,-1.7781025","aiImageUrl":"jour2.jpg"},{"lat":46.884536,"lng":-0.899612,"name":"Les Epesses","jour":3,"titre":"Voyage dans le Temps au Puy du Fou","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=46.884536,-0.899612&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=46.884536,-0.899612","aiImageUrl":"jour3.jpg"},{"lat":46.9872475,"lng":-2.2692823,"name":"Île de Noirmoutier","jour":4,"titre":"L'Île aux Mimosas : Noirmoutier","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=46.9872475,-2.2692823&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=46.9872475,-2.2692823","aiImageUrl":"jour4.jpg"},{"lat":46.69777699999999,"lng":-1.944529,"name":"Saint-Gilles-Croix-de-Vie","jour":5,"titre":"Port de pêche et Retour","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=46.69777699999999,-1.944529&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=46.69777699999999,-1.944529","aiImageUrl":"jour5.jpg"}];
+      
+      markers.forEach((markerData) => {
+        const marker = new google.maps.Marker({
+          position: { lat: markerData.lat, lng: markerData.lng },
+          map: map,
+          title: markerData.name,
+          label: String(markerData.jour)
+        });
+        
+        const contentString = `
+          <div class="info-window">
+            <img src="${markerData.streetViewUrl}" alt="Street View de ${markerData.name}" />
+            <h3>Jour ${markerData.jour}</h3>
+            <p><strong>${markerData.name}</strong></p>
+            <p><a href="${markerData.streetViewLinkUrl}" target="_blank" rel="noopener noreferrer"><strong>${markerData.titre}</strong></a></p>
+          </div>
+        `;
+        
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q&callback=initMap">
+  </script>
+</body>
+</html>
