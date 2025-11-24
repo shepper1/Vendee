@@ -1,0 +1,155 @@
+{
+  "pays": "France",
+  "drapeau": "🇫🇷",
+  "symbole": "❤️",
+  "titre": "Échappée Vendéenne : Entre Terre, Mer et Histoire",
+  "budget": "1200 €",
+  "duree": "5 jours",
+  "temps_vol": "3h (Train)",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🚆",
+      "titre": "Arrivée sur la Côte de Lumière",
+      "legende": "Après le trajet depuis Paris, installation en douceur aux Sables-d'Olonne et première bouffée d'air marin sur la célèbre promenade du Remblai.",
+      "lieu": "Les Sables-d'Olonne",
+      "activites": [
+        "🚆 Trajet Paris > Les Sables-d'Olonne",
+        "🚗 Prise en main de la voiture de location",
+        "🚶 Balade sur le Remblai et découverte du port"
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Astuce",
+          "texte": "Réservez votre TGV et votre voiture de location bien à l'avance pour bénéficier des meilleurs tarifs, surtout en période de vacances."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🛶",
+      "titre": "Entre Océan et Venise Verte",
+      "legende": "Explorez le port de pêche animé des Sables-d'Olonne avant de vous évader dans le silence apaisant des canaux du Marais Poitevin.",
+      "lieu": "Les Sables-d'Olonne & Marais Poitevin",
+      "activites": [
+        "🐟 Visite du port de pêche et du marché des Halles Centrales",
+        "🛶 Balade en barque dans le Marais Poitevin"
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "👟",
+          "titre": "Équipement",
+          "texte": "Prévoyez des chaussures confortables pour explorer les quais et un anti-moustique pour le Marais Poitevin en fin de journée."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "⚔️",
+      "titre": "Voyage dans le Temps au Puy du Fou",
+      "legende": "Une journée entière dédiée au spectaculaire parc du Puy du Fou, élu plusieurs fois 'Meilleur Parc du Monde', pour une immersion inoubliable dans l'Histoire.",
+      "lieu": "Les Epesses",
+      "activites": [
+        "🏰 Journée complète au Grand Parc du Puy du Fou"
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🎟️",
+          "titre": "Planification",
+          "texte": "Achetez vos billets en ligne et téléchargez l'application du parc pour consulter les horaires des spectacles et optimiser votre journée."
+        },
+        {
+          "symbole": "🌙",
+          "titre": "Le soir",
+          "texte": "Pensez à réserver le spectacle nocturne 'Les Noces de Feu' pour une expérience magique (billet séparé)."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🏝️",
+      "titre": "L'Île aux Mimosas : Noirmoutier",
+      "legende": "Découvrez les paysages uniques de l'île de Noirmoutier, entre plages de sable fin, forêts de pins, marais salants et le fameux Passage du Gois.",
+      "lieu": "Île de Noirmoutier",
+      "activites": [
+        "🌊 Traversée du Passage du Gois (selon la marée)",
+        "🚲 Balade à vélo dans le Bois de la Chaise et visite des marais salants"
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "⚠️",
+          "titre": "Marées",
+          "texte": "Consultez impérativement les horaires de marée avant d'emprunter le Passage du Gois. Il est submersible et dangereux à marée haute."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "👋",
+      "titre": "Port de pêche et Retour",
+      "legende": "Une dernière escale à Saint-Gilles-Croix-de-Vie, célèbre pour sa sardine, avant de prendre la route du retour vers Paris, la tête remplie de souvenirs vendéens.",
+      "lieu": "Saint-Gilles-Croix-de-Vie",
+      "activites": [
+        "🐟 Découverte du port et de la sardine de Saint-Gilles-Croix-de-Vie",
+        "🚗 Route vers la gare et retour à Paris"
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🍴",
+          "titre": "Gourmandise",
+          "texte": "Ne partez pas sans avoir goûté la 'gâche vendéenne', une brioche locale délicieuse, parfaite pour le voyage du retour."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de Mai, Juin et Septembre.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "En Mai/Juin, les températures varient entre 12 et 20°C. Prévoir une veste pour les soirées en bord de mer.",
+      "symbole": "🌡️"
+    },
+    {
+      "titre": "La voiture est quasi indispensable pour explorer la Vendée en toute liberté.",
+      "symbole": "🚗"
+    },
+    {
+      "titre": "Pensez à réserver hébergements et activités phares (Puy du Fou) plusieurs semaines à l'avance.",
+      "symbole": "🗓️"
+    },
+    {
+      "titre": "Les spécialités locales : mogettes, préfou, troussepinette, et bien sûr, les produits de la mer.",
+      "symbole": "🦞"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Infos officielles et inspirations",
+      "titre": "Vendée Tourisme",
+      "url": "https://www.vendee-tourisme.com/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Horaires des trains",
+      "titre": "SNCF Connect",
+      "url": "https://www.sncf-connect.com/",
+      "symbole": "🚆"
+    },
+    {
+      "legende": "Horaires des marées (Passage du Gois)",
+      "titre": "Passage du Gois",
+      "url": "https://www.passagedugois.com/",
+      "symbole": "🌊"
+    }
+  ]
+}
